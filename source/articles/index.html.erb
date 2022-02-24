@@ -1,0 +1,19 @@
+---
+title: Articles
+---
+<h2>Articles</h2>
+
+<% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+  <div>
+    <h3>~ <%= year %> ~</h3>
+    <ul>
+      <% articles.each do |article| %>
+        <li>
+          <a href="<%= article.url %>"><%= article.title %></a>
+          —
+          <%= article.date.strftime('%b %e') %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
