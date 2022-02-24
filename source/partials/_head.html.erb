@@ -1,0 +1,42 @@
+<meta charset="utf-8" />
+<meta http-equiv='X-UA-Compatible' content='ie=edge' />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+<meta name="author" content="<%= page_author %>">
+<meta name="description" content="<%= page_description %>">
+<% if page_keywords %>
+<meta name="keywords" content="<%= page_keywords %>">
+<% end %>
+
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="<%= page_title %>">
+<meta property="og:site_name" content="<%= config[:title] %>">
+<meta property="og:url" content="<%= page_url %>">
+<meta property="og:description" content="<%= page_description %>" />
+<meta property="og:type" content="<%= current_article.present? ? 'article' : 'website' %>" />
+<% if page_image %>
+<meta property="og:image" content="<= page_image %>"/>
+<% end %>
+
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="<%= page_title %>" />
+<meta property="twitter:description" content="<%= page_description %>" />
+<% if page_image %>
+<meta property="twitter:image" content="<= page_image %>"/>
+<% end %>
+
+<link rel="canonical" href="<%= page_url %>">
+<title><%= page_title %></title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+
+<%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+
+<%= stylesheet_link_tag "style" %>
+<%= javascript_include_tag "site.min" %>
