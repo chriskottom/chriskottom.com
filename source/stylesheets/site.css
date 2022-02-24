@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   background-color: #fbc547;
   color: #333;
@@ -11,11 +15,10 @@ body {
 
 a {
   color: rgba(#000, 0.7);
+}
 
-  &:focus,
-  &:hover {
-    color: rgba(#000, 0.6);
-  }
+a:focus, a:hover {
+  color: rgba(#000, 0.6);
 }
 
 .middleman-logo {
