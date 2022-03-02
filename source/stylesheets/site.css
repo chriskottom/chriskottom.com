@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #fbc547;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
-    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
-  text-align: center;
+@layer base {
+  body {
+    @apply font-sans text-lg bg-white text-slate-800;
+  }
+
+  a {
+    @apply text-sky-700
+  }
+
+  a:hover, a:focus, a:active {
+    @apply text-sky-500
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl font-bold;
+  }
 }
 
-a {
-  color: rgba(#000, 0.7);
-}
+@layer components {
+  nav#header #nav-content a {
+    @apply inline-block text-gray-600 no-underline my-2 mx-4;
+  }
 
-a:focus, a:hover {
-  color: rgba(#000, 0.6);
-}
+  nav#header #nav-content a:hover {
+    @apply text-gray-900 underline;
+  }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+  nav#header #nav-content a.active {
+    @apply text-gray-900 font-bold;
+  }
+
+  nav#header #nav-content a.active:hover {
+    @apply text-gray-800 no-underline;
+  }
+
+  footer a {
+    @apply text-base text-gray-500 transition
+  }
+
+  footer a:hover {
+    @apply text-gray-600
+  }
 }
