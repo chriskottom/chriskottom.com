@@ -17,6 +17,17 @@
           <li>
             <%= link_to 'About', 'about', class: ('active' if current_page.path =~ /^about/) %>
           </li>
+          <li>
+            <button
+              aria-label="Toggle Dark Mode"
+              type="button"
+              class="w-8 h-8 rounded-full flex items-center justify-center group hover:bg-yellow-50 hover:ring-2 ring-gray-150 transition-all"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 stroke-0 stroke-yellow-500 fill-yellow-200 group-hover:fill-yellow-300">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+          </li>
         </ul>
       </div>
   </div>
