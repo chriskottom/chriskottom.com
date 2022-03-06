@@ -40,3 +40,11 @@
 
 <%= stylesheet_link_tag "style" %>
 <%= javascript_include_tag "site.min" %>
+<script>
+  // Load darkMode from localStorage, must be in HEAD to avoid FOUC
+  if (localStorage.darkMode && localStorage.darkMode.toLowerCase() == 'true') {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+</script>
