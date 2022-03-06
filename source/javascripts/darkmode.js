@@ -1,22 +1,11 @@
-const button = document.getElementById('dark-mode-button')
-const html_element = document.querySelector('html')
-
-let dark_mode_boolean = false
-
-button.addEventListener('click', () => {
-    //checking if the dark mode as already been
-    if(!localStorage.getItem('dark-mode')) {
-        localStorage.setItem('dark-mode', dark_mode_boolean)
-    }
-    if(localStorage.getItem('dark-mode') === true) {
-        localStorage.getItem('dark-mode') === false
-    } else if(localStorage.getItem('dark-mode') === false) {
-        localStorage.getItem('dark-mode') === true
-    }
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('dark-mode-button').addEventListener('click', () => {
+        if (localStorage.getItem('darkMode') === 'true') {
+            localStorage.setItem('darkMode', false)
+            document.documentElement.classList.remove('dark')
+        } else {
+            localStorage.setItem('darkMode', true)
+            document.documentElement.classList.add('dark')
+        }
+    })
 })
-
-if(localStorage.getItem('dark-mode') === true ) {
-    html_element.classList.add('dark')
-} else if(localStorage.getItem('dark-mode') === false) {
-    html_element.classList.remove('dark')
-}
