@@ -4,15 +4,15 @@
 
 @layer base {
   body {
-    @apply font-sans text-lg bg-white text-slate-800;
+    @apply font-sans text-lg bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-50;
   }
 
   a {
-    @apply text-sky-700
+    @apply text-sky-700 dark:text-sky-300;
   }
 
   a:hover, a:focus, a:active {
-    @apply text-sky-500
+    @apply text-sky-500 dark:text-sky-200;
   }
 
   h1 {
