@@ -26,19 +26,19 @@
 
 @layer components {
   nav#header #nav-content a {
-    @apply inline-block text-gray-600 no-underline my-2 mx-4;
+    @apply inline-block text-gray-600 no-underline my-2 mx-4 dark:text-sky-50;
   }
 
   nav#header #nav-content a:hover {
-    @apply text-gray-900 underline;
+    @apply text-gray-900 underline dark:text-sky-200;
   }
 
   nav#header #nav-content a.active {
-    @apply text-gray-900 font-bold;
+    @apply text-gray-900 font-bold dark:text-sky-50;
   }
 
   nav#header #nav-content a.active:hover {
-    @apply text-gray-800 no-underline;
+    @apply text-gray-800 no-underline dark:text-sky-200;
   }
 
   footer a {
