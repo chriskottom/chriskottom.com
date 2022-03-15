@@ -1,38 +1,49 @@
-<nav id="header" class="fixed w-full z-10 top-0 bg-white shadow dark:bg-slate-900">
-  <div class="container w-full max-w-3xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
-      <div>
-        <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/">
-          chriskottom
-        </a>
-      </div>
+<nav id="header" class="fixed w-full z-10 top-0 bg-white dark:bg-slate-900 transition-all">
+  <div id="progress" class="h-1 z-20 top-0" style="background:linear-gradient(to right, #0369a1 var(--scroll), transparent 0);"></div>
+  <div class="container w-full max-w-2xl lg:max-w-3xl flex flex-wrap items-center justify-between mt-0 mx-auto py-3">
+    <div class="pl-4 md:pl-0">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/">
+        <%= image_tag 'android-chrome-192x192.png', class: 'w-11 h-11' %>
+      </a>
+    </div>
 
-      <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 md:bg-transparent z-20 bg-white">
-        <ul class="list-reset lg:flex justify-end flex-1 items-center">
-          <li class="mr-3">
-            <%= link_to 'Articles', 'articles', class: ('active' if current_page.path =~ /^articles/) %>
-          </li>
-          <li class="mr-3">
-            <%= link_to 'Projects', 'projects', class: ('active' if current_page.path =~ /^projects/) %>
-          </li>
-          <li>
-            <%= link_to 'About', 'about', class: ('active' if current_page.path =~ /^about/) %>
-          </li>
-          <li>
-            <button
-              id="dark-mode-button"
-              type="button"
-              aria-label="Toggle Dark Mode"
-              class="w-8 h-8 rounded-full flex items-center justify-center group hover:bg-yellow-50 hover:ring-2 ring-gray-150 transition-all"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 stroke-0 stroke-yellow-500 fill-yellow-200 group-hover:fill-yellow-300 block dark:hidden">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-6 h-6 stroke-0 stroke-yellow-500 fill-yellow-200 group-hover:fill-yellow-300 hidden dark:block">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </div>
+    <div class="block md:hidden pr-4">
+      <button id="nav-toggle" class="flex items-center px-3 py-2 rounded border border-slate-400 text-slate-800 hover:bg-slate-100 dark:border-sky-50 dark:text-sky-200 dark:hover:bg-slate-700">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow md:flex md:items-center md:w-auto hidden md:block mt-2 md:mt-0 bg-transparent z-20" id="nav-content">
+      <ul class="list-reset md:flex justify-center md:justify-end flex-1 items-center">
+        <li class="mr-3 text-center">
+          <%= link_to 'Articles', 'articles', class: ('active' if current_page.path =~ /^articles/) %>
+        </li>
+        <li class="mr-3 text-center">
+          <%= link_to 'Projects', 'projects', class: ('active' if current_page.path =~ /^projects/) %>
+        </li>
+        <li class="text-center">
+          <%= link_to 'About', 'about', class: ('active' if current_page.path =~ /^about/) %>
+        </li>
+        <li>
+          <button
+            id="dark-mode-button"
+            type="button"
+            aria-label="Toggle Dark Mode"
+            title="Toggle dark mode"
+            class="w-9 h-9 rounded-full flex items-center justify-center mx-auto border-0 group hover:bg-yellow-50 hover:ring-2 ring-gray-150 transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 stroke-0 stroke-yellow-500 fill-yellow-200 group-hover:fill-yellow-300 block dark:hidden">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-7 h-7 stroke-0 stroke-yellow-500 fill-yellow-200 group-hover:fill-yellow-300 hidden dark:block">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
