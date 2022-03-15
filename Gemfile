@@ -8,6 +8,9 @@ gem 'middleman-syntax', '~> 3.2'
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
+# For article summaries
+gem 'nokogiri', '~> 1.13'
+
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
 
