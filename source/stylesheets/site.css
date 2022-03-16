@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-sans text-lg bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-50;
+    @apply font-sans font-normal text-lg bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-50;
   }
 
   a {
@@ -48,4 +48,23 @@
   footer a:hover {
     @apply text-gray-600
   }
+
+  article.article {
+    @apply mb-12;
+  }
+
+  article.article p,
+  article.article div.highlight {
+    @apply mb-4;
+  }
+
+  article.article p code {
+    @apply font-mono font-bold text-sky-800 dark:text-sky-300;
+  }
+
+  article.article div.highlight td.rouge-gutter pre.lineno {
+    @apply pr-3 font-thin text-gray-200 dark:text-slate-800;
+  }
 }
+
+@import url("highlighting.css");

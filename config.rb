@@ -31,9 +31,9 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-activate :syntax, :line_numbers => true
+activate :syntax, line_numbers: true, css_class: 'codehilite'
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, fenced_code_blocks: true, smartypants: true
 
 
 # Layouts

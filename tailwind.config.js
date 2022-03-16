@@ -3,7 +3,8 @@ module.exports = {
   content: ["./source/**/*.{erb,html,js}"],
   theme: {
     fontFamily: {
-      'sans': ['Lato', '"Helvetica Neue"', '"Noto Sans"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"']
+      'sans': ['Lato', '"Helvetica Neue"', '"Noto Sans"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+      'mono': ['Inconsolata', 'Liberation Mono', 'Courier New', 'monospace'],
     },
     extend: {},
   },
