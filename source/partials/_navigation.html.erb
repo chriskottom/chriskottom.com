@@ -19,13 +19,13 @@
     <div class="w-full flex-grow md:flex md:items-center md:w-auto hidden md:block mt-2 md:mt-0 bg-transparent z-20" id="nav-content">
       <ul class="list-reset md:flex justify-center md:justify-end flex-1 items-center">
         <li class="mr-3 text-center">
-          <%= link_to 'Articles', 'articles', class: ('active' if current_page.path =~ /^articles/) %>
+          <%= link_to 'Articles', '/articles', class: ('active' if current_page.path =~ /^articles/) %>
         </li>
         <li class="mr-3 text-center">
-          <%= link_to 'Projects', 'projects', class: ('active' if current_page.path =~ /^projects/) %>
+          <%= link_to 'Projects', '/projects', class: ('active' if current_page.path =~ /^projects/) %>
         </li>
         <li class="text-center">
-          <%= link_to 'About', 'about', class: ('active' if current_page.path =~ /^about/) %>
+          <%= link_to 'About', '/about', class: ('active' if current_page.path =~ /^about/) %>
         </li>
         <li>
           <button
