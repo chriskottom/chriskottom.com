@@ -1,6 +1,8 @@
 ---
 title: Comparing Timestamps in Rails
 date: 2018-01-14 00:00 UTC
+description: Ruby and ActiveSupport classes like Time, DateTime, and TimeWithZone might seem interchangeable, but be careful when you compare instances of different classes.
+keywords: Ruby, Rails, ActiveSupport, timestamps, Time, DateTime, TimeWithZone
 ---
 The Ruby core language and standard library include two classes that represent timestamps: Time and DateTime.  And even though they fill similar needs, they have different internals and aren't comparable.
 

@@ -1,6 +1,8 @@
 ---
 title: Versioning a Rails API
 date: 2017-04-05 00:00 UTC
+description: Rails developers can add versioning to their APIs with relatively little effort. This article explains why you need to add versions to your API and how.
+keywords: API versioning, API, JSON, Rails, web services
 ---
 <figure class="flex flex-col w-full mx-auto mb-6 md:max-w-lg md:float-right md:mr-0 md:ml-4 md:mb-3">
   <img src="/images/versioning-commitstrip.jpg">
