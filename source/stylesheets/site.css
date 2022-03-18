@@ -53,12 +53,24 @@
     @apply mb-12;
   }
 
+  article.article h2 {
+    @apply text-2xl mb-2 text-sky-900 md:text-left dark:text-sky-100;
+  }
+
+  article.article ul {
+    @apply list-disc pl-8 mb-4;
+  }
+
   article.article p,
   article.article div.highlight {
     @apply mb-4;
   }
 
-  article.article p code {
+  article.article div code,
+  article.article p code,
+  article.article ol code,
+  article.article ul code,
+  article.article li code {
     @apply font-mono font-bold text-sky-800 dark:text-sky-300;
   }
 

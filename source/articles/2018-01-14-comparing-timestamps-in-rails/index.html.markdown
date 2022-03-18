@@ -1,7 +1,6 @@
 ---
 title: Comparing Timestamps in Rails
 date: 2018-01-14 00:00 UTC
-last_updated: 2022-03-16 13:53 UTC
 ---
 The Ruby core language and standard library include two classes that represent timestamps: Time and DateTime.  And even though they fill similar needs, they have different internals and aren't comparable.
 
