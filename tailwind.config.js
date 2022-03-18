@@ -1,6 +1,6 @@
 module.exports = {
   darkMode: "class",
-  content: ["./source/**/*.{erb,html,js}"],
+  content: ["./source/**/*.{erb,html,js,markdown}"],
   theme: {
     fontFamily: {
       'sans': ['Lato', '"Helvetica Neue"', '"Noto Sans"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
