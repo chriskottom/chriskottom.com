@@ -18,7 +18,7 @@ ArgumentError: comparison of Time with DateTime failed
 		from (irb):5
 		from /home/chris/.rbenv/versions/2.4.2/bin/irb:11:in `<main>'
 ```
-
+READMORE
 Rails adds the `ActiveSupport::TimeWithZone` class and extends the core classes in a number of ways including by allowing comparison of instances of different classes:
 
 ```ruby
