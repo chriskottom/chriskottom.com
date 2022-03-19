@@ -61,6 +61,14 @@
     @apply list-disc pl-8 mb-4;
   }
 
+  article.article ol {
+    @apply list-decimal pl-8 mb-4;
+  }
+
+  article.article ol li {
+    @apply pl-2;
+  }
+
   article.article p,
   article.article div.highlight {
     @apply mb-4;
