@@ -1,11 +1,11 @@
 ---
 ---
-<div id="hero" class="flex flex-col container w-full px-8 mb-10 md:flex-row-reverse md:px-0">
+<div id="hero" class="flex flex-col container w-full mb-10 md:flex-row-reverse">
   <div class="grow-0 shrink-0 self-start rounded-full mx-auto mb-8 p-2 bg-sky-700 dark:bg-sky-300">
     <%= image_tag 'chriskottom-160.jpg', class: 'rounded-full w-40 h-40' %>
   </div>
 
-  <div class="mx-6 md:ml-0 md:mr-16">
+  <div class="md:ml-0 md:mr-16">
     <h2 class="text-5xl mb-1 text-center text-sky-900 md:text-left dark:text-sky-100">Chris Kottom</h2>
     <h3 class="text-3xl mb-6 text-center md:text-left">Developer and Founder</h3>
     <p class="mb-3 text-center md:text-left">
@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<div id="now" class="container w-full mb-10 px-8 md:px-0">
+<div id="now" class="container w-full mb-10">
   <h3 class="text-2xl mb-2 text-center md:text-left">Right now</h3>
   <p class="text-center md:text-left">
     I'm working on getting my personal website and all of the old articles moved
@@ -27,7 +27,7 @@
   </p>
 </div>
 
-<div id="recent-writings" class="mb-10 px-8 md:px-0">
+<div id="recent-writings" class="mb-10">
   <h3 class="text-2xl mb-2 text-center md:text-left">Latest articles</h3>
   <% blog.articles[0..4].each do |article| %>
     <h4 class="text-xl">
@@ -36,7 +36,7 @@
   <% end %>
 </div>
 
-<div id="projects" class="mb-10 px-8 md:px-0 md:mb-6">
+<div id="projects" class="mb-10 md:mb-6">
   <h3 class="text-2xl mb-2 text-center md:text-left">Projects</h3>
 
   <h4 class="text-xl"><%= link_to 'The Minitest Cookbook', '/minitestcookbook' %></h4>
