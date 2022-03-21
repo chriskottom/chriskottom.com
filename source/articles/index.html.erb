@@ -1,14 +1,15 @@
 ---
 title: Articles
+description: Articles about technology and business. But yeah, let's be honest, mostly technology.
 ---
-<h2>Articles</h2>
+<h2 class="text-5xl mb-12 text-center text-sky-900 md:text-left dark:text-sky-100">Articles</h2>
 
 <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-  <div>
-    <h3>~ <%= year %> ~</h3>
+  <div class="mb-10">
+    <h3 class="text-3xl mb-2 text-center font-semibold text-sky-800 md:text-left dark:text-sky-200">~ <%= year %> ~</h3>
     <ul>
       <% articles.each do |article| %>
-        <li>
+        <li class="text-xl text-center md:text-left">
           <a href="<%= article.url %>"><%= article.title %></a>
           —
           <%= article.date.strftime('%b %e') %>
