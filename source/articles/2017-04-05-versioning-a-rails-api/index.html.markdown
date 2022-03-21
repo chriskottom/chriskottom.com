@@ -54,6 +54,7 @@ Suppose we have a really simple blogging application as an example with two reso
 
 ```ruby
 # config/routes.rb
+
 Rails.application.routes.draw do
   resources :posts do
     resources :comments
@@ -65,6 +66,7 @@ We can start on the path to versioning by updating the routes file to wrap the e
 
 ```ruby
 # config/routes.rb
+
 Rails.application.routes.draw do
   concern :api_base do
     resources :posts do
@@ -92,6 +94,7 @@ It wasn't pretty, but you should now have version 1 of your API up and running. 
 
 ```ruby
 # config/routes.rb
+
 Rails.application.routes.draw do
   concern :api_base do
     resources :posts do
@@ -115,4 +118,3 @@ And then you'll need to prepare the new versions of the source files to
 * Find and replace all instances of `v1|V1` in the new source files with `v2|V2`.
 
 This much copying and pasting of basically identical chunks of code should make you feel uneasy. As good codebase citizens, we'd prefer to share functionality some other way - through inheritance, mixins, composition, anything but this. But bear in mind that each of these versions needs to stand on its own without the risk of changes to one affecting another. That's the reason for separating the endpoints and their tests through wholesale copying of code. And while I'm still looking at Rails engines and other alternative methods of implementing versioning, this is the least-worst of the options I've tried so far.
-

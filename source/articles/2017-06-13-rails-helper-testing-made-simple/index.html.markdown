@@ -10,7 +10,7 @@ But helpers fill a necessary role in our applications by removing presentation l
 
 ## The only two things you need to know about helpers
 
-Faced with a collection of arbitrary functions, many developers skip testing helpers altogether. A lot of my older applications have zero tests for helpers, and it was mostly because the benefits just didn't seem to justify the effort required. That changed the day I came to two important realizations. First, understand that **helpers are just Ruby mixins**. From a testing perspective, there's nothing special or unusual about them, and that means that we can apply [the same tools and techniques that we already use to test other kind of mixins](/blog/2015/03/testing-ruby-mixins-in-isolation/).
+Faced with a collection of arbitrary functions, many developers skip testing helpers altogether. A lot of my older applications have zero tests for helpers, and it was mostly because the benefits just didn't seem to justify the effort required. That changed the day I came to two important realizations. First, understand that **helpers are just Ruby mixins**. From a testing perspective, there's nothing special or unusual about them, and that means that we can apply [the same tools and techniques that we already use to test other kind of mixins](/articles/testing-ruby-mixins-in-isolation).
 
 Second, since they're just modules mixed into the view, **there are only two types of helpers we need to consider**: methods that depend on the thing they're mixed into, and methods that don't. The rest of this post will explain how to know which type of method you're dealing with and how to write a test for it once you do.
 
@@ -20,6 +20,7 @@ A standalone helper for our purposes is essentially a [pure function](https://en
 
 ```ruby
 # app/helpers/products_helper.rb
+
 module ProductsHelper
   def link_to_product(product)
     link_to product.name, product
@@ -48,6 +49,7 @@ While the Rails view mixes in all your helper modules with every request, helper
 
 ```ruby
 # test/helpers/products_helper_test.rb
+
 require 'test_helper'
 
 class ProductsHelperTest < ActionView::TestCase
@@ -79,6 +81,7 @@ Testing methods like this is simple - given known inputs, make assertions about 
 
 ```ruby
 # app/helpers/products_helper.rb
+
 module ProductsHelper
   # ...
 
@@ -102,6 +105,7 @@ When testing a method like this, it's possible to make assertions about the para
 
 ```ruby
 # test/helpers/products_helper_test.rb
+
 require 'test_helper'
 
 class ProductsHelperTest < ActionView::TestCase
@@ -129,6 +133,7 @@ In most cases, I find it cleaner to write helper methods as pure functions by pa
 
 ```ruby
 # app/helpers/pages_helper.rb
+
 module PagesHelper
   def active?(path)
     'active' if current_page? path
@@ -144,6 +149,7 @@ Here again, the helper module and all the Rails standard view helpers are mixed 
 
 ```ruby
 # test/helpers/pages_helper_test.rb
+
 require 'test_helper'
 
 class PagesHelperTest < ActionView::TestCase

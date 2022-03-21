@@ -2,10 +2,10 @@
 title: 4 Fantastic Ways to Set Up State in Minitest
 date: 2014-10-29 00:00 UTC
 description: How to set up system state in Minitest using a variety of techniques and the power of Ruby.
-categories: development, Ruby, Minitest, before, let, setup, testing
+keywords: Ruby, Minitest, testing, setup phase, setup, before, let
 ---
-<div class="w-full max-w-lg px-6 pb-0 mx-auto dark:my-6 dark:bg-white md:float-right md:pr-0">
-  <img src="/images/fantastic_four.jpg" title="The Fantastic 4" class="w-full" />
+<div class="w-full max-w-lg mx-auto mb-6 px-6 dark:py-6 dark:bg-white lg:float-right lg:pr-0 lg:dark:pr-6 lg:dark:ml-6">
+  <img src="/images/fantastic_four.png" title="The Fantastic 4" class="w-full" />
 </div>
 
 When it comes to exercising a piece of application logic with automated unit tests, there's a well-understood process that most frameworks and testing tools follow:
@@ -34,6 +34,7 @@ You probably already know that `Minitest::Test` provides a `setup` method that y
 
 ```ruby
 # test/thing_test.rb
+
 require 'test/test_helper'
 
 class ThingTest < Minitest::Test
@@ -54,6 +55,7 @@ end
 
 ```ruby
 # test/thing_test.rb
+
 require 'test/test_helper'
 
 describe 'Thing' do
@@ -76,6 +78,7 @@ Using `let` provides an alternate and some would say more elegant way of setting
 
 ```ruby
 # test/thing_test.rb
+
 require 'test/test_helper'
 
 class ThingTest < Minitest::Test
@@ -98,6 +101,7 @@ What's more, `let` gives you the ability to define and redefine the block assign
 
 ```ruby
 # test/thing_test.rb
+
 require 'test/test_helper'
 
 describe 'ThingList' do
@@ -135,6 +139,7 @@ RSpec gives developers the ability to define setup code that would only run befo
 
 ```ruby
 # test/facebook_test.rb
+
 require "test_helper"
 
 class FacebookTest < Minitest::Test
@@ -158,6 +163,7 @@ Setup code intended to run once before *all* tests in the suite use a similar te
 
 ```ruby
 # test/test_helper.rb
+
 require "minitest/autorun"
 
 class Minitest::Test
@@ -167,4 +173,4 @@ end
 
 The result is a Facebook API client that's shared between all test cases in the suite and which is set up once before any tests are executed.
 
-The fact that this *can* be done doesn't mean that it *should* be done though.  Before using a technique such as this though, you need to ask yourself what effect it will have on your suite.  Tests should be written as much as possible in a single file with as much verbosity and repetition as is needed to convey their meaning, and I'd personally be really reluctant to distribute code that's essential to a clear understanding of my test case into other files.
+The fact that this *can* be done doesn't mean that it *should* be done.  Before using a technique such as this, you need to ask yourself what effect it will have on your suite.  Tests should be written as much as possible in a single file with as much verbosity and repetition as is needed to convey their meaning, and I'd personally be really reluctant to distribute code that's essential to a clear understanding of my test case into other files.

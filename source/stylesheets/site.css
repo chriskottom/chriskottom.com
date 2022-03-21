@@ -57,6 +57,10 @@
     @apply text-2xl mb-2 text-sky-900 md:text-left dark:text-sky-100;
   }
 
+  article.article h3 {
+    @apply text-xl mb-2 text-sky-900 md:text-left dark:text-sky-100;
+  }
+
   article.article ul {
     @apply list-disc pl-8 mb-4;
   }
@@ -84,6 +88,14 @@
 
   article.article div.highlight td.rouge-gutter pre.lineno {
     @apply pr-3 font-thin text-gray-200 dark:text-slate-800;
+  }
+
+  article.article blockquote {
+    @apply w-full border border-sky-200 px-6 py-4 mb-4 bg-sky-50 text-sky-800 italic;
+  }
+
+  article.article blockquote p:last-child {
+    @apply text-sm;
   }
 }
 
