@@ -1,6 +1,34 @@
 ---
-title: "About Me"
-author: "Chris Kottom"
-description: "Chris Kottom - all your questions answered, all mysteries revealed"
+title: About Me
+description: A little bit about me, Chris Kottom
 ---
-About Me
+<h2 class="text-4xl mb-8 text-sky-900 leading-none md:text-left dark:text-sky-100">
+  Hi, I'm Chris!  Nice of you to stop by.
+</h2>
+
+<div class="w-full flex flex-col pb-8 lg:flex-row">
+  <div class="w-full lg:max-w-xl grow">
+    <p class="pb-6 text-xl">
+      I'm a software developer and the author of
+      <a href="https://minitestcookbook.com">The Minitest Cookbook</a> and
+      <a href="https://developingrailsapis.com">Developing Rails API Applications</a>.
+      And since March 2022, I've been working on building a new yet-to-be-named tool
+      to help remote development teams organize and eliminate meetings.
+    </p>
+
+    <p class="pb-6 text-xl">
+      In my day job, I work with teams and clients all over the world on software
+      development projects using a range of languages and technologies including
+      Ruby on Rails, Laravel, Vue.js, and Javascript.
+    </p>
+
+    <p class="pb-8 text-xl">
+      I live in Prague, Czech Republic with my wife, two kids, and an adorable but
+      not very bright chocolate Lab named Shelly.
+    </p>
+  </div>
+
+  <div class="flex flex-col w-full place-self-center shrink lg:pl-8">
+    <%= image_tag 'czech_chris.jpg', class: 'rounded mx-auto max-w-lg' %>
+  </div>
+</div>
