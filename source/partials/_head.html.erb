@@ -12,7 +12,11 @@
 <meta property="og:site_name" content="<%= config[:title] %>">
 <meta property="og:url" content="<%= page_url %>">
 <meta property="og:description" content="<%= page_description %>" />
+<% if current_page.data.type %>
+<meta property="og:type" content="<%= current_page.data.type %>" />
+<% else %>
 <meta property="og:type" content="<%= current_article.present? ? 'article' : 'website' %>" />
+<% end %>
 <% if page_image %>
 <meta property="og:image" content="<= page_image %>"/>
 <% end %>
@@ -26,25 +30,3 @@
 
 <link rel="canonical" href="<%= page_url %>">
 <title><%= page_title %></title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="manifest" href="/images/site.webmanifest">
-
-<%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-
-<%= stylesheet_link_tag "style" %>
-<%= javascript_include_tag "site.min" %>
-<script>
-  // Load darkMode from localStorage, must be in HEAD to avoid FOUC
-  if (localStorage.darkMode && localStorage.darkMode.toLowerCase() == 'true') {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
-</script>
