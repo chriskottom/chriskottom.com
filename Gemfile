@@ -14,6 +14,9 @@ gem 'nokogiri', '~> 1.13'
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
 
+# JS compression that supports ES6
+gem 'terser', '~> 1.1'
+
 # Windows does not come with time zone data
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby, :x64_mingw]
 
