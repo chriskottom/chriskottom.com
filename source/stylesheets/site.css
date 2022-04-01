@@ -7,19 +7,19 @@
     @apply font-sans font-normal text-lg bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-50;
   }
 
-  a {
+  body a {
     @apply text-sky-700 dark:text-sky-300;
   }
 
-  a:hover, a:focus, a:active {
+  body a:hover, body a:focus, body a:active {
     @apply text-sky-500 dark:text-sky-200;
   }
 
-  h1 {
-    @apply text-2xl font-bold;
+  body h1 {
+    @apply text-2xl font-black;
   }
 
-  h2 {
+  body h2 {
     @apply text-xl font-bold;
   }
 }
@@ -99,11 +99,11 @@
   }
 
   article.article blockquote {
-    @apply w-full border border-sky-200 px-6 py-4 mb-4 bg-sky-50 text-sky-800 italic;
+    @apply w-full border border-sky-200 px-6 py-4 mb-4 bg-sky-50 text-sky-800 text-xl italic;
   }
 
   article.article blockquote p:last-child {
-    @apply text-sm;
+    @apply text-sm mb-0;
   }
 }
 
