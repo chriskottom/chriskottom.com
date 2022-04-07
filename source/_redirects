@@ -1,0 +1,36 @@
+# Redirect general blog traffic to /articles
+/blog                 /articles
+/blog/                /articles
+/blog/page/*          /articles
+/blog/archives*       /articles
+/blog/categories/*    /articles
+
+# Redirects to specific articles
+/blog/2014/06/dress-up-your-minitest-output                       /articles/dress-up-your-minitest-output
+/blog/2014/06/dress-up-your-minitest-output/                      /articles/dress-up-your-minitest-output
+/blog/2014/08/customize-minitest-assertions-and-expectations      /articles/customize-minitest-assertions-and-expectations
+/blog/2014/08/customize-minitest-assertions-and-expectations/     /articles/customize-minitest-assertions-and-expectations
+/blog/2014/10/4-fantastic-ways-to-set-up-state-in-minitest        /articles/4-fantastic-ways-to-set-up-state-in-minitest
+/blog/2014/10/4-fantastic-ways-to-set-up-state-in-minitest/       /articles/4-fantastic-ways-to-set-up-state-in-minitest
+/blog/2014/10/exploring-minitest-concurrency                      /articles/exploring-minitest-concurrency
+/blog/2014/10/exploring-minitest-concurrency/                     /articles/exploring-minitest-concurrency
+/blog/2014/11/fixing-fixtures                                     /articles/fixing-fixtures
+/blog/2014/11/fixing-fixtures/                                    /articles/fixing-fixtures
+/blog/2015/03/testing-ruby-mixins-in-isolation                    /articles/testing-ruby-mixins-in-isolation
+/blog/2015/03/testing-ruby-mixins-in-isolation/                   /articles/testing-ruby-mixins-in-isolation
+/blog/2015/04/minitest-benchmark-an-introduction                  /articles/minitest-benchmark-an-introduction
+/blog/2015/04/minitest-benchmark-an-introduction/                 /articles/minitest-benchmark-an-introduction
+/blog/2015/05/minitest-benchmark-a-practical-example              /articles/minitest-benchmark-a-practical-example
+/blog/2015/05/minitest-benchmark-a-practical-example/             /articles/minitest-benchmark-a-practical-example
+/blog/2015/11/bulletproof-rails-background-jobs                   /articles/bulletproof-rails-background-jobs
+/blog/2015/11/bulletproof-rails-background-jobs/                  /articles/bulletproof-rails-background-jobs
+/blog/2015/11/testing-rails-background-workers                    /articles/testing-rails-background-workers
+/blog/2015/11/testing-rails-background-workers/                   /articles/testing-rails-background-workers
+/blog/2016/08/minitest-cheat-sheet                                /articles/minitest-cheat-sheet
+/blog/2016/08/minitest-cheat-sheet/                               /articles/minitest-cheat-sheet
+/blog/2017/04/full-stack-testing-with-rails-system-tests/
+/blog/2017/04/versioning-a-rails-api/
+/blog/2017/06/rails-helper-testing-made-simple/
+/blog/2018/01/comparing-timestamps-in-rails/
+
+
