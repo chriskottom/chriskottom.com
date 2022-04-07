@@ -51,6 +51,7 @@ page '/*.txt', layout: false
 # https://middlemanapp.com/advanced/dynamic-pages/
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
+proxy "_redirects", "netlify-redirects", ignore: true
 
 
 # Helpers
