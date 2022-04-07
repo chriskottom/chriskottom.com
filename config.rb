@@ -14,7 +14,7 @@ activate :blog do |blog|
   blog.sources = "{year}-{month}-{day}-{title}/index.html"
   blog.default_extension = ".markdown"
   blog.summary_length = 250
-  blog.permalink = "{title}"
+  blog.permalink = "{title}/index.html"
 
   blog.paginate = false
 
@@ -34,6 +34,8 @@ end
 activate :syntax, line_numbers: true, css_class: 'codehilite'
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
+
+activate :directory_indexes
 
 
 # Layouts
