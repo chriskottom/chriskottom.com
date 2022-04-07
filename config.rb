@@ -1,5 +1,6 @@
 # Site settings
 # https://middlemanapp.com/advanced/configuration/
+set :site_url, "https://chriskottom.com"
 set :author, "Chris Kottom"
 set :title, "Chris Kottom's Tech and Business Blog"
 set :description, "Chris Kottom writes about programming, software development, business, and bootstrapping."
