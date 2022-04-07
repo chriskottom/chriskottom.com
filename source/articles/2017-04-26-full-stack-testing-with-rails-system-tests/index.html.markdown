@@ -1,8 +1,8 @@
 ---
 title: Full-Stack Testing with Rails System Tests
-date: 2017-04-26 00:00 UTC
-description: Rails 5.1 introduced system tests for simulating browser interactions with their applications. In this post, we explore the new addition and see how you can apply it in your own projects.
-keywords: Ruby, Ruby on Rails, testing, "system tests", Capybara, Minitest
+date: 2017-04-26 08:29:46 UTC
+description: Rails system tests let you simulate browser interactions with your applications. In this post, we'll look at the reasons you'd want to use these and see how you can apply them in your own projects.
+keywords: Ruby, Ruby on Rails, testing, system tests, Capybara, Minitest
 ---
 <div class="w-full max-w-lg mx-auto mb-6 px-6 dark:py-6 dark:bg-white lg:float-right lg:pr-0 lg:dark:pr-6 lg:dark:ml-6">
   <img src="/images/unit-tests-passing-no-integration-tests.jpg" title="Two unit tests passing, no integration tests" alt="Two unit tests passing, no integration tests" class="w-full" />
@@ -19,7 +19,6 @@ This example shows how an integration test can be used to simulate the creation 
 
 ```ruby
 # test/integration/create_new_user_test.rb
-
 require 'test_helper'
 
 class CreateNewUserTest < ActionDispatch::IntegrationTest
@@ -68,7 +67,7 @@ Integration tests also only ever look at the HTML that's rendered by the server,
 
 ## Moving to system tests
 
-<figure class="flex flex-col w-full mx-auto mb-6 max-w-md md:float-right md:mr-0 md:ml-4 md:mb-3">
+<figure class="flex flex-col w-full mx-auto mb-6 md:max-w-sm md:float-right md:mr-0 md:ml-4 md:mb-3">
   <img src="/images/capybara-god-of-thunder.jpg">
   <figcaption class="text-center mt-0 text-base">
     Capybara, God of Thunder<br/>(Actually, looks more like a woodchuck to me)
@@ -82,7 +81,6 @@ This example system test is roughly equivalent to the integration test we looked
 
 ```ruby
 # test/system/users_test.rb
-
 require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
@@ -119,7 +117,6 @@ Under the default configuration, Rails system tests will run the application and
 
 ```ruby
 # test/application_system_test_case.rb
-
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
@@ -131,7 +128,6 @@ Rails supports other Capybara drivers as well, so we can swap out Selenium for a
 
 ```ruby
 # test/application_system_test_case.rb
-
 require "test_helper"
 require "capybara/poltergeist"
 require "capybara/webkit"
@@ -160,52 +156,51 @@ Each of the drivers has different characteristics and capabilities according to 
 
 <table class="min-w-full mb-6 border border-sky-300">
   <colgroup>
-    <col style="width:20%">
-    <col style="width:20%">
+    <col style="width:15%">
     <col style="width:20%">
     <col style="width:20%">
     <col style="width:20%">
   </colgroup>
   <thead class="bg-sky-100 border border-sky-300 dark:text-sky-800">
-    <tr>
-      <th></th>
-      <th class="p-2 leading-none">Rack::Test</th>
-      <th class="p-2 leading-none">Capybara::Webkit</th>
-      <th class="p-2 leading-none">Poltergeist</th>
-      <th class="p-2 leading-none">Selenium</th>
+    <tr class="header">
+      <th class="px-2 py-1 leading-none text-base text-center"></th>
+      <th class="px-2 py-1 leading-none text-base text-center">Rack::Test</th>
+      <th class="px-2 py-1 leading-none text-base text-center">Capybara::Webkit</th>
+      <th class="px-2 py-1 leading-none text-base text-center">Poltergeist</th>
+      <th class="px-2 py-1 leading-none text-base text-center">Selenium</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="border-b border-sky-800">
-      <th class="px-2 py-1 leading-none text-right bg-sky-600">Type</th>
+    <tr>
+      <th class="px-2 py-1 leading-none text-base text-right font-semibold">Type</td>
       <td class="px-2 py-1 leading-tight text-center">headless</td>
       <td class="px-2 py-1 leading-tight text-center">headless</td>
       <td class="px-2 py-1 leading-tight text-center">headless</td>
       <td class="px-2 py-1 leading-tight text-center">browser-based</td>
     </tr>
-    <tr class="border-b border-sky-800">
-      <th class="px-2 py-1 leading-none text-right bg-sky-600">Concurrency</th>
+    <tr>
+      <td class="px-2 py-1 leading-none text-base text-right font-semibold">Concurrency</td>
       <td class="px-2 py-1 leading-tight text-center">single-threaded</td>
       <td class="px-2 py-1 leading-tight text-center">multithreaded</td>
       <td class="px-2 py-1 leading-tight text-center">multithreaded</td>
       <td class="px-2 py-1 leading-tight text-center">multithreaded</td>
     </tr>
-    <tr class="border-b border-sky-800">
-      <th class="px-2 py-1 leading-none text-right bg-sky-600">Speed</th>
+    <tr>
+      <td class="px-2 py-1 leading-none text-base text-right font-semibold">Speed</td>
       <td class="px-2 py-1 leading-tight text-center">fast</td>
       <td class="px-2 py-1 leading-tight text-center">not bad</td>
       <td class="px-2 py-1 leading-tight text-center">not bad</td>
       <td class="px-2 py-1 leading-tight text-center">pretty slow</td>
     </tr>
-    <tr class="border-b border-sky-800">
-      <th class="px-2 py-1 leading-none text-right bg-sky-600">Dependencies</th>
+    <tr>
+      <td class="px-2 py-1 leading-none text-base text-right font-semibold">Dependencies</td>
       <td class="px-2 py-1 leading-tight text-center">none</td>
       <td class="px-2 py-1 leading-tight text-center"><a href="https://trac.webkit.org/wiki/QtWebKit">QtWebKit</a></td>
       <td class="px-2 py-1 leading-tight text-center"><a href="http://phantomjs.org/">PhantomJS</a></td>
       <td class="px-2 py-1 leading-tight text-center"><a href="https://sites.google.com/a/chromium.org/chromedriver/">ChromeDriver</a></td>
     </tr>
     <tr>
-      <th class="px-2 py-1 leading-none text-right bg-sky-600">Script Eval</th>
+      <td class="px-2 py-1 leading-none text-base text-right font-semibold">Script Eval</td>
       <td class="px-2 py-1 leading-tight text-center">no</td>
       <td class="px-2 py-1 leading-tight text-center">yes</td>
       <td class="px-2 py-1 leading-tight text-center">yes</td>
@@ -214,7 +209,7 @@ Each of the drivers has different characteristics and capabilities according to 
   </tbody>
 </table>
 
-<h2><img src="/images/but-wait-theres-more.png" title="But wait, there's more!" /></h2>
+<h2><img src="/images/but-wait-theres-more.png" title="But wait, there's more!" alt="But wait, there's more!" /></h2>
 
 Rails has followed a pretty consistent pattern of wrapping existing tools and layering on additional features and functionality that improve integration and ease of use, and that pattern continues. To that end, this initial implementation of system tests includes a couple of nice extended features that you should be aware of.
 
@@ -228,7 +223,7 @@ So far I'm loving this combination of (no) setup and (more) features that system
 
 Big ol' thanks to [@eileencodes](https://twitter.com/eileencodes) for shepherding this feature into Rails. If you're interested in all the inside baseball about the development of this feature, you should really check out [the slides from her RailsConf talk](https://speakerdeck.com/eileencodes/railsconf-2017-building-the-new-rails-system-test-framework).
 
-## Using system tests: need vs. speed
+## Using system tests: need vs speed
 
 <div class="w-full max-w-lg mx-auto mb-6 px-6 dark:py-6 dark:bg-white lg:float-right lg:pr-0 lg:dark:pr-6 lg:dark:ml-6">
   <img src="/images/test-pyramid.png" title="The Test Pyramid" alt="The Test Pyramid" class="w-full" />
