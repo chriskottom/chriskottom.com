@@ -6,5 +6,5 @@
 /blog/categories/*    /articles
 
 # Redirects to specific articles
-/blog/:year/:month/:slug                                          /articles/:slug
-/blog/*/                                                          /blog/:splat
+/blog/:year/:month/:slug                /articles/:slug
+/blog/*/                                /blog/:splat
