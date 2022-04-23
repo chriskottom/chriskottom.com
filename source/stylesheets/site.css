@@ -87,11 +87,11 @@
   }
 
   article.article div.highlight pre.codehilite {
-    @apply bg-slate-900 border border-slate-600 overflow-x-auto;
+    @apply bg-slate-900 border border-slate-600 overflow-x-auto pl-1.5;
   }
 
   article.article div.highlight td.rouge-gutter pre.lineno {
-    @apply pl-1.5 font-thin text-slate-300;
+    @apply font-thin text-slate-300;
   }
 
   article.article div.highlight pre.codehilite td.rouge-code {
