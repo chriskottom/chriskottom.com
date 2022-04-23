@@ -113,7 +113,7 @@ end
 
 Capybara's DSL ([see this cheat sheet](https://gist.github.com/zhengjia/428105)) lets you define test cases using the same terminology you'd use to describe navigating an application in a web browser. Instead of scripting `get` and `post` requests sent and responses received, we're now speaking in terms of forms filled in and links clicked. The tests are more expressive in fewer lines of code than an equivalent integration test.
 
-Under the default configuration, Rails system tests will run the application and tests in separate threads with the help of Capybara's [Selenium](https://github.com/SeleniumHQ/selenium/wiki/Ruby-Bindings) driver. During test execution, Selenium will open a separate browser window (by default, Chrome using [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/) installed separately) in which the tests will run. This is all preconfigured for you in the `test/application_system_test_case.rb` file that you see required at the top of the example system test above.
+Under the default configuration, Rails system tests will run the application and tests in separate threads with the help of Capybara's [Selenium](https://github.com/SeleniumHQ/selenium/wiki/Ruby-Bindings) driver. During test execution, Selenium will open a separate browser window (by default, Chrome using [ChromeDriver](https://sites.google.com/chromium.org/driver/) installed separately) in which the tests will run. This is all preconfigured for you in the `test/application_system_test_case.rb` file that you see required at the top of the example system test above.
 
 ```ruby
 # test/application_system_test_case.rb
@@ -152,7 +152,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 end
 ```
 
-Each of the drivers has different characteristics and capabilities according to its implementation. [Rack:Test](https://github.com/rack-test/rack-test) works a lot like Rails integration tests, and offers similar performance. Headless drivers like [capybara-webkit](https://github.com/thoughtbot/capybara-webkit) and [Poltergeist](https://github.com/teampoltergeist/poltergeist)offer a balance of JavaScript evaluation and acceptable performance. The table below summarizes the current driver options.
+Each of the drivers has different characteristics and capabilities according to its implementation. [Rack:Test](https://github.com/rack-test/rack-test) works a lot like Rails integration tests, and offers similar performance. Headless drivers like [capybara-webkit](https://github.com/thoughtbot/capybara-webkit) and [Poltergeist](https://github.com/teampoltergeist/poltergeist) offer a balance of JavaScript evaluation and acceptable performance. The table below summarizes the current driver options.
 
 <table class="min-w-full mb-6 border border-sky-300">
   <colgroup>
@@ -197,7 +197,7 @@ Each of the drivers has different characteristics and capabilities according to 
       <td class="px-2 py-1 leading-tight text-center">none</td>
       <td class="px-2 py-1 leading-tight text-center"><a href="https://trac.webkit.org/wiki/QtWebKit">QtWebKit</a></td>
       <td class="px-2 py-1 leading-tight text-center"><a href="http://phantomjs.org/">PhantomJS</a></td>
-      <td class="px-2 py-1 leading-tight text-center"><a href="https://sites.google.com/a/chromium.org/chromedriver/">ChromeDriver</a></td>
+      <td class="px-2 py-1 leading-tight text-center"><a href="https://sites.google.com/chromium.org/driver/">ChromeDriver</a></td>
     </tr>
     <tr>
       <td class="px-2 py-1 leading-none text-base text-right font-semibold">Script Eval</td>

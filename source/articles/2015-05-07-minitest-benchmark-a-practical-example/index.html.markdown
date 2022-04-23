@@ -4,7 +4,7 @@ date: 2015-05-07 11:36:30 UTC
 description: Minitest::Benchmark can be a useful tool in testing your code, but there's precious little information about how it's used in the wild. In the second installment of this series, we look at a practical example.
 keywords: Ruby, Minitest, benchmarks, performance
 ---
-In the [last post](minitest-benchmark-an-introduction), we looked at `Minitest::Benchmark` as a high-level concept and sketched out a basic structure for how we might test with them.  I don't know about anyone else, but I've gotta say: the process of researching and writing that post gave me a lot of perspective on what Benchmarks do and where my own tests could benefit from their use.  There's a limit, though, to what you can learn from looking at technology from 10,000 feet.  What usually delivers the most bang for my buck is seeing how a thing is used in practice, trying it out myself, and seeing where I'm getting value from it.
+In the [last post](/articles/minitest-benchmark-an-introduction), we looked at `Minitest::Benchmark` as a high-level concept and sketched out a basic structure for how we might test with them.  I don't know about anyone else, but I've gotta say: the process of researching and writing that post gave me a lot of perspective on what Benchmarks do and where my own tests could benefit from their use.  There's a limit, though, to what you can learn from looking at technology from 10,000 feet.  What usually delivers the most bang for my buck is seeing how a thing is used in practice, trying it out myself, and seeing where I'm getting value from it.
 
 In this post, we're going to take a first crack at a practical benchmarking example to get started down that path.  When we're finished, we'll reflect on what we've observed and what, if anything, we've learned from it.READMORE
 
@@ -14,7 +14,7 @@ In this post, we're going to take a first crack at a practical benchmarking exam
   <img src="/images/get_sorted.png" title="Keep Calm and Get Sorted" alt="Keep Calm and Get Sorted" class="w-full" />
 </div>
 
-Recall from the [previous post](minitest-benchmark-an-introduction) that Benchmarks run the code in a given block against progressively larger workloads.  So as much as I didn't want it to come to this, the example that I chose for this post is **sort algorithms**.  Why?
+Recall from the [previous post](/articles/minitest-benchmark-an-introduction) that Benchmarks run the code in a given block against progressively larger workloads.  So as much as I didn't want it to come to this, the example that I chose for this post is **sort algorithms**.  Why?
 
 * They're familiar to a lot of programmers from CS courses they took years ago.  (Or in some cases, even decades...)
 * Their performance characteristics are comprehensible and predictable.
@@ -155,7 +155,7 @@ end
 
 ## And finally, we're ready to benchmark
 
-Once we've seen that this test passes, we're ready to implement our Benchmark.  As a first step, we need to define the range of values and test data that can be used across the various runs.  As mentioned in the [previous post](minitest-benchmark-an-introduction), you define the range by overriding the `bench_range` class method as we've done below.  The resulting values will be: `[10, 100, 1_000, 10_000, 25_000]`.
+Once we've seen that this test passes, we're ready to implement our Benchmark.  As a first step, we need to define the range of values and test data that can be used across the various runs.  As mentioned in the [previous post](/articles/minitest-benchmark-an-introduction), you define the range by overriding the `bench_range` class method as we've done below.  The resulting values will be: `[10, 100, 1_000, 10_000, 25_000]`.
 
 ```ruby
 # test/sort_benchmark.rb

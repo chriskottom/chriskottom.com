@@ -6,7 +6,7 @@ keywords: Ruby, Minitest, concurrency, parallelization, testing
 ---
 Among all the other morsels of sunshine and goodness it offers, [Minitest](https://github.com/seattlerb/minitest) gives you the ability to denote that some or all of your test cases are able to run concurrently, and as pointed out in the source comments, that can only mean one thing: that you rule and your tests are awesome.
 
-<div class="w-full max-w-2xl p-6 mx-auto dark:my-6 dark:bg-white">
+<div class="w-full max-w-2xl px-6 pb-6 mx-auto dark:pt-6 dark:my-6 dark:bg-white">
   <img src="/images/you_rule_and_your_tests_are_awesome.png" title="In doing so, you're admitting that you rule and your tests are awesome" alt="In doing so, you're admitting that you rule and your tests are awesome" class="w-full" />
 </div>
 
