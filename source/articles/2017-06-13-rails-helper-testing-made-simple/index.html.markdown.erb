@@ -4,6 +4,7 @@ date: 2017-06-13 00:00 UTC
 description: Rails view helpers can be hard to navigate, but they don't have to be hard to test. This post explains what helpers are and provides a clear guide for testing them.
 keywords: Rails, helpers, testing
 ---
+<%= partial 'partials/obsolete_content' %>
 Rails relies on a standard project structure and a strong set of conventions to keep things neat and tidy - models separated from controllers, configuration in another folder structured just so. The exception that proves the rule in this case, though, would have to be Rails view helpers. Helpers tend to be a dumping ground for all the random bits of view logic, formatting, and utility code that accumulate in every web application, and if you're not disciplined (and most of us aren't), `app/helpers` can degenerate into a jungle quickly.
 
 But helpers fill a necessary role in our applications by removing presentation logic from our templates and moving it to methods which makes it easier to test. So even though they're going to be hard to organize almost by definition, we can still be disciplined about testing them. In other words: your view helpers might still look like spaghetti, but at least we can make sure it's well-tested spaghetti.READMORE

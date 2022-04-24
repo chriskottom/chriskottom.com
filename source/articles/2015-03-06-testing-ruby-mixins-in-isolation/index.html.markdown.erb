@@ -4,6 +4,7 @@ date: 2015-03-06 00:00 UTC
 description: Testing Ruby mixins doesn't have to be a pain. This post shows a simple, lightweight technique for testing them in isolation.
 keywords: Ruby, Minitest, mixins, testing
 ---
+<%= partial 'partials/obsolete_content' %>
 Ruby's approach to inheritance by module inclusion isn't unique in the world of programming languages, but it gets a lot of attention and hits a sweet spot for a lot of use cases.  Finding the right patterns to test them, though, has been a challenge for many because, as mixins, they tend to get... You know... mixed into things.  Testing something that can't be instantiated on its own requires a little consideration and different treatment than a standard class, so a lot of programmers resort to testing the inherited behaviors in each including class or, only slightly better, using shared helpers or RSpec shared examples.
 
 All of these techniques have their place in testing, but in a perfect world, they're not the tools that you should reach for as a first option.  Ideally you're first making a good-faith effort at testing your mixins, to the greatest possible degree, in isolation from the classes that include them.READMORE
