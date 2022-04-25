@@ -24,4 +24,10 @@ module SiteHelpers
   def page_image
     current_page.data.image
   end
+
+  def last_modified(page = current_page)
+    date = Date.parse(page.data.last_modified) if page.data.last_modified
+    date ||= Date.parse(page.data.date) if page.data.date
+    date || Date.today
+  end
 end
